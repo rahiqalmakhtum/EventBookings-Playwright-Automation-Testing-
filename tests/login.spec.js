@@ -20,12 +20,11 @@ function generateTestData() {
   };
 }
 
-test('Signup Flow', async ({ page }) => {
+test('Sign up using a new unique email each time.', async ({ page }) => {
   const homePage = new BasePage(page);
   const signupPage = new SignupPage(page);
 
   const testData = generateTestData();
-  console.log(`Generated credentials: ${testData.email} / ${testData.password}`);
 
   await homePage.navigate();
   await signupPage.navigateToSignup();
@@ -34,6 +33,22 @@ test('Signup Flow', async ({ page }) => {
   await signupPage.fillSignupForm(testData.firstName, testData.lastName, testData.email, testData.password, testData.password);
   await signupPage.submitSignup();
 
+  
+});
+
+test('Sign up using a new unique email each time.', async ({ page }) => {
+  const homePage = new BasePage(page);
+  const signupPage = new SignupPage(page);
+
+  const testData = generateTestData();
+
+  await homePage.navigate();
+  await signupPage.navigateToSignup();
+  await signupPage.validateSignupPage();
+
+  await signupPage.fillSignupForm(testData.firstName, testData.lastName, 'rahiq@gmail.com', testData.password, testData.password);
+  await signupPage.submitSignup();
+  await signupPage.validateDupplicateEmail();
   
 });
 

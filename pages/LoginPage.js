@@ -44,7 +44,6 @@ export class LoginPage {
     }
 
     async validateInvalidInput() {
- 
         await expect(this.emailError).toBeVisible();
     }
 

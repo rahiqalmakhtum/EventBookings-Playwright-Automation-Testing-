@@ -12,7 +12,8 @@ export class SignupPage extends LoginPage {
     this.passwordInput = page.locator("#Password");
     this.confirmPasswordInput = page.locator("#ConfirmPassword");
     this.submitButton = page.getByRole('button', { name: /sign up/i });
-    this.logoutButton = page.getByText('Log out');
+    this.errorMessage = page.locator('span.error-msg.field-validation-error');
+
   }
 
   async navigateToSignup() {
@@ -33,6 +34,10 @@ export class SignupPage extends LoginPage {
     await this.passwordInput.fill(password);
     await this.confirmPasswordInput.fill(confirmPassword);
   }
+  
+  async validateDupplicateEmail() {
+        await expect(this.errorMessage).toBeVisible();
+    }
 
   async submitSignup() {
     await this.submitButton.click();
