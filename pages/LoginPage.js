@@ -34,6 +34,7 @@ export class LoginPage {
     async login(email, password) {
         await this.emailInput.fill(email);
         await this.passwordInput.fill(password);
+        await this.page.waitForTimeout(3000);
         await this.submitButton.click();
     }
 
@@ -43,10 +44,12 @@ export class LoginPage {
     }
 
     async validateInvalidInput() {
+ 
         await expect(this.emailError).toBeVisible();
     }
 
     async validateWrongEmailOrPass() {
+        await this.page.waitForTimeout(3000);
         await expect(this.wrongEmailOrPass).toBeVisible();
     }
 }

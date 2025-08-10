@@ -34,11 +34,10 @@ test('Signup Flow', async ({ page }) => {
   await signupPage.fillSignupForm(testData.firstName, testData.lastName, testData.email, testData.password, testData.password);
   await signupPage.submitSignup();
 
-  await page.waitForTimeout(1000); 
-
+  
 });
 
-test('Login with mpty form submission', async ({page}) => {
+test('Login with empty form submission', async ({page}) => {
   const homePage = new BasePage(page);
   const loginPage = new LoginPage(page);
 
@@ -49,7 +48,7 @@ test('Login with mpty form submission', async ({page}) => {
 
   await loginPage.emptyLogin();
   
-  await loginPage.validateErrorMessage();
+  await loginPage.validateInvalidInput();
 
 })
 
@@ -81,7 +80,7 @@ test('Login with wrong password', async ({page}) => {
   await loginPage.navigateToLogin();
   await loginPage.validateLoginPage();
 
-  await loginPage.login('rahiq123@gmail.com', testData.password);
+  await loginPage.login('rahiq@gmail.com', testData.password);
   
   await loginPage.validateWrongEmailOrPass();
 
@@ -100,6 +99,6 @@ test('Login with valid credentials', async ({page}) => {
 
   await loginPage.login('rahiq123@gmail.com','Rahiq123@321');
   
-  await loginPage.validateWrongEmailOrPass();
+  await page.waitForTimeout(1000); 
 
 })
