@@ -1,6 +1,6 @@
 # EventBookings Automation Testing with Playwright
 
-[![Playwright Tests](https://github.com/yourusername/eventbookings-tests/actions/workflows/playwright.yml/badge.svg)](https://github.com/yourusername/eventbookings-tests/actions/workflows/playwright.yml)
+[![Playwright Tests](https://github.com/rahiqalmakhtum/EventBookings-Playwright-Automation-Testing-/actions/workflows/playwright.yml/badge.svg)](https://github.com/rahiqalmakhtum/EventBookings-Playwright-Automation-Testing-/actions/workflows/playwright.yml)
 [![Node.js](https://img.shields.io/badge/node.js-v18.x-green.svg)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
