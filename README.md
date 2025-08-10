@@ -8,11 +8,6 @@
 ## 📌 Project Overview
 This project automates functional and UI testing for the EventBookings web platform using **Playwright**. The goal is to verify critical features such as user signup and login workflows, ensuring reliability and improving testing efficiency through automation.
 
-## 🛠 Tech Stack
-- **Playwright** – End-to-end automation framework  
-- **JavaScript/TypeScript** – Test scripting language  
-- **Node.js** – Runtime environment  
-- **HTML Reports** – Visual test execution summaries  
 
 ## 🚀 Key Features
 - Comprehensive end-to-end UI testing  
@@ -38,12 +33,11 @@ This project automates functional and UI testing for the EventBookings web platf
   - Non-existing user login attempts  
 - Positive test: successful login using valid credentials created during signup  
 
-## 📊 Test Reports
-Automated test runs generate HTML reports detailing:  
-- Number of tests executed  
-- Pass/fail status per test  
-- Total execution time  
-- Screenshots for failed tests  
+## 🛠 Tech Stack
+- **Playwright** – End-to-end automation framework  
+- **JavaScript/TypeScript** – Test scripting language  
+- **Node.js** – Runtime environment  
+- **HTML Reports** – Visual test execution summaries  
 
 ## ▶️ How to Run
 ```bash
